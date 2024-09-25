@@ -58,6 +58,8 @@ class EnersalesClient {
 	private $urlGetDataSchema = "data-schemes";
     private $urlGetForm = "forms/get";
 
+	private $urlCustomSendData = "custom/send-data";
+
     private $fileChunkLength = 2097152;
 
     public function __construct(array $args){
@@ -494,4 +496,21 @@ class EnersalesClient {
 
         return $responseBody;
     }
+
+	public function customSendData(array $data){
+
+		$options = [
+			'form_params'=>$data
+		];
+
+		$response = $this->request('POST', $this->urlCustomSendData, $options);
+        $responseRaw = $response->getBody()->getContents();
+		$responseBody = json_decode($responseRaw);
+		
+		if(empty($responseBody)){
+			throw new \Exception($responseRaw);
+		}
+		
+		return $responseBody;
+	}
 }
