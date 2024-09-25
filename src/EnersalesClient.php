@@ -58,7 +58,7 @@ class EnersalesClient {
 	private $urlGetDataSchema = "data-schemes";
     private $urlGetForm = "forms/get";
 
-	private $urlCustomSendData = "custom/send-data";
+	private $urlCustomSendData = "custom-data/transfer";
 
     private $fileChunkLength = 2097152;
 

@@ -277,6 +277,21 @@ class ExampleUnit {
             }
     
         }
+    }
 
+    public function sendCustomData(){
+        $res = $this->client->customSendData([
+            'data'=>[
+                'name'=>'API CUSTOM DATA',
+                'organization_id'=> 809,
+                'owner'=> 1,
+                'user_id'=> 1,
+                'date'=> "2019-12-06T16:14:26.562Z",
+                'tipologia_id'=> "Fisico",
+                'categoria_id'=> 1,
+            ]
+        ]);
+
+        var_dump($res);
     }
 }
