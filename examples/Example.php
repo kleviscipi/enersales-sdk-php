@@ -15,7 +15,7 @@ class ExampleUnit {
         //     'instance'=>'core01',
         //     'access_key'=>'xxxx',
         //     'secret_key'=>'xxxxx',
-        // ];;
+        // ];
         $this->client = new \Enersales\EnersalesClient($credentials);
     }
     
